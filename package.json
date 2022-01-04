@@ -1,0 +1,25 @@
+{
+  "name": "fullstack",
+  "version": "1.0.0",
+  "description": "education fullstack app ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "local"
+  },
+  "keywords": [
+    "javascript",
+    "node.js",
+    "mongodb",
+    "express",
+    "mongoose"
+  ],
+  "author": "Aleksey",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
