@@ -4,6 +4,6 @@ const express = require('express'),
 const controllers = require('../controllers/auth')
 
 router.get('/login', controllers.login)
-router.get('/register', controllers.register)
+router.post('/register', controllers.register)
 
 module.exports = router
