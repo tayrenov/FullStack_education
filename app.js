@@ -1,5 +1,5 @@
 const express = require('express'),
-      bodyParser= require('body-parser')
+      bodyParser= require('body-parser');
 
 const analyticsRoutes =require('./routes/analytics'),
       authRoutes = require('./routes/auth'),
@@ -10,8 +10,10 @@ const analyticsRoutes =require('./routes/analytics'),
 
 const app = express()
 
+app.use(require('morgan')('dev'))
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
+app.use(require('cors')())
 
 app.use('/api/analytics', analyticsRoutes)
 app.use('/api/auth', authRoutes)
