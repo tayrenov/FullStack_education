@@ -1,8 +1,9 @@
 const express = require('express'),
       mongoose = require('mongoose'),
-      bodyParser= require('body-parser');
+      bodyParser = require('body-parser'),
+      passport = require('passport');
 
-const analyticsRoutes =require('./routes/analytics'),
+const analyticsRoutes = require('./routes/analytics'),
       authRoutes = require('./routes/auth'),
       categoryRoutes = require('./routes/category'),
       orderRoutes = require('./routes/order'),
@@ -16,6 +17,8 @@ mongoose.connect(keys.mongoURI)
     .then(()=> console.log("MongoDB connected"))
     .catch(error => console.log(error))
 
+app.use(passport.initialize())
+require('./middleware/passport')(passport)
 app.use(require('morgan')('dev'))
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())

@@ -3,6 +3,8 @@ const express = require('express'),
 
 const controller = require('../controllers/auth')
 
+const errorHandler = require('../utils/errorHandler')
+
 router.post('/login', controller.login)
 router.post('/register', controller.register)
 
